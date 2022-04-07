@@ -24,6 +24,14 @@ class Dashboard:
             )
         )
 
+        self.ui.page_2.clicked.connect(partial(self.switch_page)) #go to settings page
+
+    def switch_page(self): 
+        if self.ui.page_2.isChecked():
+            self.ui.LESPAGES.setCurrentIndex(1) 
+            self.ui.Allpages.setCurrentIndex(3)
+
+
     def init(self):
         pass
 
@@ -63,5 +71,21 @@ class Dashboard:
             Login.dialogue_message(self , 'Attention' , 'Error invalid inputs ' )
 
 
-    def out_out_handler(self):
-        self.ui.Allpages.setCurrentIndex(0)
+    def out_out_handler(self): #TEST, when user clicks button they will delete account
+        # self.ui.Allpages.setCurrentIndex(0) #ORIGINAL CODE
+        username = self.ui.username_login_lineEdit.text() #CURRENT ERROR - can not find URL?
+        password = self.ui.password_login_lineEdit.text() #CHECK IF USER REGISTERED NEW ACCOUNT, NOTHING WOULD BE IN LOGIN **
+        if username != "" and password != "":
+            x = requests.post('http://localhost:5000/app/deleteuser', json={
+                "username": username,
+                "password": password
+            })
+            if x.json()['res']:
+                self.ui.Allpages.setCurrentIndex(0) #delete user account and go back to login
+            else :
+                print('delete error ')
+                Login.dialogue_message(self , 'Attention' , 'Something went wrong inner loop ' )
+        else:
+            print('delete error')
+            Login.dialogue_message(self , 'Attention' , 'Something went wrong outer loop ' )
+

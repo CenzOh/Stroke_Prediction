@@ -53,3 +53,22 @@ def user_exist(username) :
         return False
 
 
+def delete_user_pass(username, password) : #user will remove their account from the database
+    if os.path.isfile('database/users.json'):
+        with open('database/users.json', 'r') as openfile: #r+ for read and write
+
+            dictionary = json.load(openfile)
+        for user in dictionary.get('users'):
+            if user.get('username') == username and user.get('password') == password : #user exists, can delete
+                user.pop('username', None)
+                user.pop('password', None)
+                # print(dictionary['users'].values())
+                #del dictionary['users']["username": username]
+                # ^ POTENTIAL PROBLEM STATEMENT
+                with open("database/users.json", "w") as outfile:
+                    json.dump(dictionary, outfile , indent= 4)
+
+                return True
+        return False
+    else:
+        return False

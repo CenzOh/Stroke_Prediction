@@ -1,0 +1,25 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      Directions to Stroke Prediciton Program
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In order to run your virutal env and set it up follow the steps below:
+
+1 - install virtualenv by runnig this command ===>pip install virtualenv
+
+2- on you desktop create a new virtual env by ==>virtualenv MlProject
+
+3- CD to MlProject folder
+
+4- activate the virtual env by runnig this command ==> Scripts\activate
+
+5- create folder inside MlProject copy all the folder (App-be , App-fe ...) (remember dont close the terminal
+
+6- on the same terminal install the new requirements i will send it (copy requiremnt with the other folders App-be , App-fe ..)
+
+7- run the application.py (this way you run the server. Command is python application.py )
+
+8 - to run the client leave the server runnig that is to say do steps 3 and 4 in a new terminal then CD to the folder contains all the other folders -app-be , app-fe) , then cd ro App-fe
+
+9- run App.py

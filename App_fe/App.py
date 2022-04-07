@@ -8,6 +8,7 @@ from PyQt5 import QtWidgets
 from pages.Dashboard import Dashboard
 from pages.Registration import Registration
 from pages.Login import Login
+from pages.Settings import Settings
 
 
 class MainWindow(QMainWindow):
@@ -29,7 +30,7 @@ class MainWindow(QMainWindow):
             ":/image/chart/line-chart-solid.svg"))
         self.ui.page_2.setIcon(self.QIcon_from_svg(
             ":/image/core/settings-solid.svg"))
-        
+
 
         # import all pages 
         Dashboard.buttons_actions(self)
@@ -40,6 +41,9 @@ class MainWindow(QMainWindow):
 
         Registration.buttons_actions(self)
         Registration.init(self)
+
+        #Settings.buttons_actions(self)
+        #Settings.init(self)
 
     
     def buttons_actions(self):
@@ -52,7 +56,7 @@ class MainWindow(QMainWindow):
             
         elif self.ui.page_2.isChecked():
             self.ui.LESPAGES.setCurrentIndex(1)
-        
+            # self.ui.Allpages.setCurrentIndex(3)
     
 
     def QIcon_from_svg(self, svg_filepath):

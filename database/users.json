@@ -36,9 +36,7 @@
             "username": "user1",
             "password": "user1"
         },
-        {
-            "username": "qwerty",
-            "password": "qwerty"
-        }
+        {},
+        {}
     ]
 }
