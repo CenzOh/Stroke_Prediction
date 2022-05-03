@@ -14,7 +14,13 @@
         <div class="col-12 col-md-6 col-lg-4 p-2">
           <label for="{{inp['name']}}" class="font-weight-bold">{{inp['text']}}</label>
           {%if inp['type']=='number'%}
-            <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" step="0.01" required/>
+            {% if inp['name'] == 'age' %}
+              <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" required/>
+            {% elif inp['name'] == 'bmi'%}
+              <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" step="0.01" required/>
+            {% elif inp['name'] == 'avg_glucose_level'%}
+              <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" min="55.1" max="272" step="0.01" required/>
+            {%endif%}
           {%else%}
             <select id="{{inp['name']}}" name="{{inp['name']}}" class="form-control" required>
               {%for x in inp['values']%}
