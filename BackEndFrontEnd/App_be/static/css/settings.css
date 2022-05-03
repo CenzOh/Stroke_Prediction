@@ -1,0 +1,155 @@
+  .container {
+    position: relative;
+    width: 100%;
+  
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .forms-container {
+    position: relative;
+    width: 100%;
+    height: relative;
+    top: 0;
+    left: 0;
+	margin-top: 70px;
+  }
+  
+  .upate{
+    position: absolute;
+    top: 50%;
+   
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+  }
+  
+ 
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 5rem;
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  form.upate{
+    z-index: 5;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  .collapse{
+    overflow: hidden;
+  }
+  .collapse-right{
+    float: right;
+  }
+  .input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+  
+  .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+	color: black;
+  }
+  .update i
+  {
+   line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+	color: black;
+	
+  }
+  h2
+  {
+	  color: black;
+  }
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 870px) {
+    .container {
+      min-height: 800px;
+      height: 100vh;
+    }
+    .update {
+      width: 100%;
+      top: 95%;
+      
+    }
+  
+    .update,
+    .container.update {
+      left: 50%;
+    }
+  
+ 
+  
+  
+   
+  
+    .left-panel {
+      grid-row: 1 / 2;
+    }
+  
+ 
+  
+  
+    
+   
+  
+   
+   
+  }
+  
+  @media (max-width: 570px) {
+    form {
+      padding: 0 1.5rem;
+    }
+  
+    .image {
+      display: none;
+    }
+    .panel .content {
+      padding: 0.5rem 1rem;
+    }
+    .container {
+      padding: 1.5rem;
+    }
+  
+   
+  }

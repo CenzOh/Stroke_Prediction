@@ -1,0 +1,23 @@
+html, body {
+  height: 100%;
+}
+.calc{
+  margin: auto;
+  right: 0px;
+  margin-left: 33.5%;
+  width: 0%;
+  padding: 10px;
+  display: block;
+}
+.btn.btn-danger, .btn.btn-success{
+  /* margin: 0; */
+  /* text-align: center; */
+  width: 100%;
+  margin-bottom: 10px;
+  /* position: absolute; */
+  /* justify-content: center; */
+}
+.mb-5.col-12.col-md-8.col-lg-6.mx-auto.mt-3{
+  max-width: 45%;
+  height: auto;
+}

@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%set title='HOME'%}
+{%block main_content %}
+{%include 'header_home.html'%}
+<div class="container-fluid vh-100 bg-light p-md-5">
+  <div class="row h-100 border rounded-lg shadow-lg bg-white">
+    <div class="col-12 col-md-auto bg-light border p-0 rounded-lg">
+      {%include 'user_nav.html'%}
+    </div>
+    <div class="col border rounded-lg shadow-lg bg-white">
+      <div class="py-3 font-weight-bold mb-3 border-bottom">Dashboard ~ Welcome to your dashboard, please enter all information truthfully and to the best of your knowledge in order to recieve an accurate prediction!</div>
+      <form class="mt-5 row no-gutters" action="{{url_for('home_actions.perform')}}" method="POST">
+        {%for inp in inputs%}
+        <div class="col-12 col-md-6 col-lg-4 p-2">
+          <label for="{{inp['name']}}" class="font-weight-bold">{{inp['text']}}</label>
+          {%if inp['type']=='number'%}
+            <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" step="0.01" required/>
+          {%else%}
+            <select id="{{inp['name']}}" name="{{inp['name']}}" class="form-control" required>
+              {%for x in inp['values']%}
+              <option value="{{loop.index - 1}}">{{x}}</option>
+              {%endfor%}
+            </select>
+          {%endif%}
+        </div>
+        {%endfor%}
+        <div class="calc">
+          <iframe scrolling="no" height="395" frameborder="0" width="170" src="https://www.cdc.gov/healthyweight/assessing/adult-widget/iframe.html" title="Adult BMI (Body Mass Index) Calculator" style="overflow: hidden;"></iframe>
+        </div>
+        <div class="col-12 mt-3">
+          <div class="text-right">
+            <input class="btn btn-danger" type="reset" value="Clear"/>
+            <button class="btn btn-success">Submit</button>
+          </div>
+        </div>
+        <img src="{{url_for('static', filename='img/dashboard.webp')}}" class="mb-5 col-12 col-md-8 col-lg-6 mx-auto mt-3"/>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,9 @@
+1. cd mlproject\mlproject
+
+2. Activate virtual enviornment with scripts\activate
+
+3. cd backendfrontend
+
+4. python application or py -m application
+
+5. Should run on http://192.168.1.141:5000/

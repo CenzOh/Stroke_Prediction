@@ -1,0 +1,9 @@
+Flask
+httplib2
+joblib
+numpy
+pandas
+PyQt5
+requests
+scikit_learn
+flask-sqlalchemy
