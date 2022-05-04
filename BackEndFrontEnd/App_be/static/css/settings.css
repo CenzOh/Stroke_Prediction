@@ -109,7 +109,6 @@
     .update {
       width: 100%;
       top: 95%;
-      
     }
   
     .update,
@@ -117,22 +116,9 @@
       left: 50%;
     }
   
- 
-  
-  
-   
-  
     .left-panel {
       grid-row: 1 / 2;
     }
-  
- 
-  
-  
-    
-   
-  
-   
    
   }
   

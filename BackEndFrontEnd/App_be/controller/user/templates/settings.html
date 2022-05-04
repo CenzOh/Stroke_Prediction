@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-{%set title='Settings'%}
+{%set title='Settings - Stroke Prediction'%}
 {%block css_block%}
 {%endblock%}
 {%block main_content %}
@@ -29,7 +29,7 @@
         </div>
         <button class="btn btn-primary">Save</button>
         <br/>
-        <a href="{{url_for('user_actions.delete_account')}}" class="btn mt-3 btn-danger">Delete account</a>
+        <button href="{{url_for('user_actions.delete_account')}}" class="btn mt-3 btn-danger">Delete account</button>
       </form>
     </div>
   </div>

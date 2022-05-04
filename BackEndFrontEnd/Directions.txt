@@ -1,4 +1,4 @@
-1. cd mlproject\mlproject
+1. cd mlproject
 
 2. Activate virtual enviornment with scripts\activate
 
