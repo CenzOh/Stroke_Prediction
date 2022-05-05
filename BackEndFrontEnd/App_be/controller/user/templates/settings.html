@@ -9,15 +9,15 @@
       {%include 'header_settings.html'%}
     </div>
     <div class="col border rounded-lg shadow-lg bg-white">
-      <div class="py-3 font-weight-bold mb-3 border-bottom">My Profile</div>
+      <div class="py-3 font-weight-bold mb-3 border-bottom">My Profile ~ Click the image to change your profile picture</div>
       {%if error%}
       <div class="alert alert-danger">{{error}}</div>
       {%endif%}
       <form method="post" enctype="multipart/form-data">
-        <div class="text-center my-3">
-          <img src="{{url_for('static', filename='profiles/'+user.image)}}" width="150" height="150" class="rounded-circle" onclick="$('#image').click()"/>
-        </div>
-        <input id="image" name="image" type="file" hidden/>
+          <div class="text-center my-3">
+            <img src="{{url_for('static', filename='profiles/'+user.image)}}" width="150" height="150" class="rounded-circle" onclick="$('#image').click()"/>
+          </div>
+          <input id="image" name="image" type="file" hidden/>
         <input name="username" value="{{user.username}}" type="text" placeholder="Username" class="form-control mb-3 py-4 rounded-pill p-3" readonly/>
         <div class="row no-gutters">
           <div class="col-12 col-md-6 pr-md-2">

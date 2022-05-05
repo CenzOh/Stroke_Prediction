@@ -1,0 +1,9 @@
+☒Make Chart A and B smaller on dashboard / home page.
+☒Add a way to show the user HOW to calculate the BMI, make a BMI calculator using the widget from the CDC website. Add this into the dashboard / home. Try to align underneath BMI. 
+ ☒Decimal point values not being accepted. 
+☒Making settings smaller / too much white space. Maybe one row each or add a picture. Or shorten the text fields. 
+☒Remove admin from the SDS. 
+☒Update architectural diagram and the diagrams in general. 
+☒Also, to open the project you do “python application” in CMD after your cd into the folder. 
+☒Add range for avg glucose level between 55.1 and 272. 
+☒Email Professor about meeting on office hours to talk how to present the project. 9th or 10th work? Before Wednesday. 
