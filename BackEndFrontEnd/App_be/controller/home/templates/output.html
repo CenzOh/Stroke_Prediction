@@ -1,47 +1,168 @@
 {%extends 'base.html'%}
-{%set title='Stroke Prediction'%}
+{%set title='Results - Stroke Prediction'%}
 {%block main_content %}
 {%include 'header_home.html'%}
+<style>
+  .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px
+}
+
+.alert_info {
+    background-color: #4285f4;
+    border: 2px solid #4285f4
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0
+}
+
+.close {
+    font-size: 20px;
+    color: #fff;
+    opacity: 0.9;
+    font-weight: normal
+}
+
+.alert_success {
+    background-color: #09c97f;
+    border: 2px solid #09c97f
+}
+
+.alert_warning {
+    background-color: #f8b15d;
+    border: 2px solid #f8b15d
+}
+
+.alert_error {
+    background-color: #f95668;
+    border: 2px solid #f95668
+}
+
+.fade_info {
+    background-color: #d9e6fb;
+    border: 1px solid #4285f4
+}
+
+.fade_info .close {
+    color: #4285f4
+}
+
+.fade_info strong {
+    color: #4285f4
+}
+
+.fade_success {
+    background-color: #c9ffe5;
+    border: 1px solid #09c97f
+}
+
+.fade_success .close {
+    color: #09c97f
+}
+
+.fade_success strong {
+    color: #09c97f
+}
+
+.alert_warning {
+    background-color: #f8b15d;
+    border: 2px solid #f8b15d
+}
+
+.alert_error {
+    background-color: #f95668;
+    border: 2px solid #f95668
+}
+
+
+.fade_warning {
+    background-color: #fff0cc;
+    border: 1px solid #f8b15d
+}
+
+.fade_warning .close {
+    color: #f8b15d
+}
+
+.fade_warning strong {
+    color: #f8b15d
+}
+
+
+</style>
 <div class="container-fluid vh-100 bg-light p-md-5">
   <div class="row vh-100 border rounded-lg shadow-lg bg-white">
     <div class="col-12 col-md-auto bg-light border-right p-0 rounded-lg">
       {%include 'user_nav.html'%}
     </div>
-    <div class="col border rounded-lg shadow-lg bg-white">
+    <div class="col border rounded-lg shadow-lg " style="background-color:#87ceeb">
       {%if user.stroke==1%}
-        <h3 class="font-weight-bold text-center alert alert-danger mt-3">
+        <!-- <h3 class="font-weight-bold text-center alert alert-danger mt-3" >
           The algorithm has predicted a Stroke
-        </h3>
+        </h3> -->
+          <center>
+        <div class="alert fade_warning .fade mt-4"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <strong>Result</strong><h1 style="color:#87ceeb"> The algorithm has predicted a Stroke😔</h1> </div>
+        <a href="{{url_for('home_actions.index')}}" class="btn btn-primary" style="width:100%;">
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+          Process Again</a>
+      </center>
         <hr/>
-        <div class="text-right my-2">
-          <a href="{{url_for('home_actions.index')}}" class="btn btn-primary">Process Again</a>
-        </div>
+        
         <div class="text-center">
           <img src="{{url_for('static', filename='img/yes-stroke.jpeg')}}" class="w-100"/>
         </div>
+        
+        <br>
+        <br>
+        
+        
+
         <div class="mapouter w-100">
           <div class="gmap_canvas">
-              <iframe class="w-100" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=strokes%20hospitals,%20new%20york&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+              <iframe class="w-100" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=strokes%20hospitals,%20new%20york&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" style="border-radius:10px;" marginheight="0" marginwidth="0"></iframe>
             </div>
         </div>
+
+        <br>
+        <br>
       {%elif user.stroke==0%}
-        <h3 class="font-weight-bold text-center alert alert-success mt-3">
+        <!-- <h3 class="font-weight-bold text-center alert alert-success mt-3">
           The algorithm has predicted no Stroke
-        </h3>
+        </h3> -->
+        <center>
+        
+          
+            <div class="alert fade_success .fade mt-4"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <strong>Result</strong><h1 style="color:#87ceeb">The algorithm has predicted no Stroke😊</h1> </div>
+           
+            <a href="{{url_for('home_actions.index')}}" class="btn btn-primary" style="width:100%;">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+              Process Again</a>
+        </center>
+      
         <hr/>
-        <div class="text-right my-2">
-          <a href="{{url_for('home_actions.index')}}" class="btn btn-primary">Process Again</a>
-        </div>
+       
           <div class="text-center">
-          <img src="{{url_for('static', filename='img/no-stroke.jpeg')}}" class="mx-auto" style="max-width:100%"/>
+          <img src="{{url_for('static', filename='img/no-stroke.jpeg')}}" class="mx-auto" style="max-width:100%;border-radius: 10px;"/>
         </div>
       {%else%}
-        <div class="font-weight-bold text-center alert alert-info mt-3">
-          Cannot View Latest Prediction - Please start a health-stroke prediction from your dashboard first to view latest results!
-        </div>
-        <div class="text-right my-2">
-          <a href="{{url_for('home_actions.index')}}" class="btn btn-primary">Process Again</a>
-        </div>
+      <center>
+        <div class="alert fade_success .fade mt-4"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <strong style="color:red">Oops!</strong><h2 style="color:#87ceeb">Cannot View Latest Prediction - Please start a health-stroke prediction from your dashboard first to view latest results! 🚫</h2> </div>
+
+     
+        <a href="{{url_for('home_actions.index')}}" class="btn btn-primary" style="width:100%;">
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+          Process Again</a>
+      </center>
+     
       {%endif%}
     </div>
   </div>

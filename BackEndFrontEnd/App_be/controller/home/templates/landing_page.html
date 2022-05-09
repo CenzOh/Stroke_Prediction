@@ -1,0 +1,181 @@
+{%extends 'landing_base.html'%}
+{%set title='YOO - Stroke Prediction'%}
+
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top " style="background-image:linear-gradient(to right,#485868,#3FC4E0);">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="{{ url_for('static',filename='assets/img/heart_logo.png') }}" alt="" >
+       
+      </a>
+
+      <nav id="navbar" class="navbar" >
+        
+        <ul>
+          {%  if "user_id" in session %}
+          <li><a class="nav-link scrollto " style="font-size:22px" href="/home">Home</a></li>
+          {% else %}
+          <li><a class="nav-link scrollto " style="font-size:22px" href="/">Home</a></li>
+
+          {% endif %}
+          {%  if "user_id" in session %}
+          <li><a class="nav-link scrollto" style="font-size:22px" href="/logout">Logout</a></li>
+          
+          {% else %}
+          <li><a class="nav-link scrollto"  style="font-size:22px" href="/register">Register</a></li>
+          <li><a class="nav-link scrollto" style="font-size:22px" href="/login">Login</a></li>
+          {%endif%}
+
+
+         
+          
+      
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle " ></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center" >
+        <img src="{{ url_for('static',filename='assets/img/paragons.png') }}"  style="position: absolute;width: 100%;z-index: 0;margin-top: 140px;">
+
+        <div class="container" >
+          <div class="row" >
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+             
+              <div data-aos="fade-up" data-aos-delay="600">
+                <div class="text-center text-lg-start">
+                    <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+
+                        <img src="{{ url_for('static',filename='assets/img/doctor.png') }}" style="width:400px;height:400px" alt="" >
+                      </div>
+                
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up" style="color:white">Our Mission</h1>
+
+                <h1 data-aos="fade-up" style="color:#3FC4E0">Your Own Personal</h1>
+                <h1 data-aos="fade-up" style="color:#3FC4E0" data-aos-delay="400">Stroke Doctor</h1>
+                <div data-aos="fade-up" data-aos-delay="600">
+                  <div class="text-center text-lg-start">
+                    <p style="color:white">Start small, live big. A stroke prediction system that utilizes machine learning built personally to help you live healthier. Begin your journey today. </p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    
+      </section><!-- End Hero -->
+
+
+
+      <section id="hero2" >
+        <img src="{{ url_for('static',filename='assets/img/paragons.png') }}"  style="position: absolute;width: 100%;margin-top: 10%;">
+           
+        <center>
+
+        <div class="container " >
+        
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center" >
+             
+                <div data-aos="fade-up" data-aos-delay="600">
+                  <div class="text-center text-lg-start">
+                    <h1 data-aos="fade-up" style="color:#3FC4E0">Stroke Prevention-Know the Risk Factors</h1>
+  
+                      <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200" style="margin-top:20px;">
+  
+                          <img src="{{ url_for('static',filename='assets/img/stroke.png') }}" style="width:400px;height:400px;margin-left:100px;" alt="" >
+  
+                        </div>
+                        <center>
+                          <h1 data-aos="fade-up" style="color:#3FC4E0">Dont wait until it’s too late, begin your steps to a healthier journey today.</h1>
+
+                        </center>
+                  </div>
+                </div>
+             
+
+           
+
+           
+          </div>
+      
+        </center>
+
+    
+      </section><!-- End Hero -->
+      <!-- Site footer -->
+     
+    <footer class="site-footer">
+     
+
+      <div class="container">
+       
+        <div class="row">
+          
+
+          <div class="col-sm-12 col-md-6">
+            
+            <h1 style="color:#3FC4E0;font-weight:bold">It All Begins</h1>
+            
+            <h1 style="color:#3FC4E0;font-weight:bold">With Small</h1>
+            <h1 style="color:#3FC4E0;font-weight:bold">Steps</h1>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+          
+            <ul class="footer-links">
+              <li><p style="color:#3FC4E0;font-weight:bold;">Move More</p></li>
+              <li><p style="color:#3FC4E0;font-weight:bold;">Eat Healthy</p></li>
+              <li><p style="color:#3FC4E0;font-weight:bold;">Control Blood Pressure</p></li>
+              <li><p style="color:#3FC4E0;font-weight:bold;">Quit Smoking</p></li>
+            </ul>
+          </div>
+         
+      
+         
+
+          <div class="col-xs-6 col-md-3">
+           
+            <ul class="footer-links">
+              <li><p style="color:#3FC4E0;font-weight:bold;">Manage Cholesterol</p></li>
+              <li><p style="color:#3FC4E0;font-weight:bold;">Work with your doctor</p></li>
+              <li><p style="color:#3FC4E0;font-weight:bold;">Stress Less</p></li>
+             
+            </ul>
+         
+          </div>
+          <br>
+        
+      
+        </div>
+      
+      </div>
+      <center>
+        <div>
+          <p style="color:#3FC4E0;font-weight:bold;">For More Information and help an how you can quit smoking today visit :</p>
+          <p style="color:#3FC4E0;font-weight:bold;">nysmokerfree.com OR call 1-866-NY-QUITS</p>
+        </div>
+     
+
+      </center>
+
+</footer>
+
+      
+{% endblock %}

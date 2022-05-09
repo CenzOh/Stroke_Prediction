@@ -109,24 +109,22 @@
     .update {
       width: 100%;
       top: 95%;
+      
     }
   
     .update,
     .container.update {
       left: 50%;
     }
-  
     .left-panel {
       grid-row: 1 / 2;
     }
-   
   }
   
   @media (max-width: 570px) {
     form {
       padding: 0 1.5rem;
     }
-  
     .image {
       display: none;
     }
@@ -136,6 +134,4 @@
     .container {
       padding: 1.5rem;
     }
-  
-   
   }

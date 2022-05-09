@@ -14,4 +14,13 @@ class User(db.Model):
     password = db.Column(db.String(100))
     stroke = db.Column(db.Integer, default=-1)
 
+class PridictionsHistory(db.Model):
+    pridiction_id = db.Column(db.Integer,primary_key=True)
+    avg_gluscose_level = db.Column(db.String(100),nullable=True)
+    bmi = db.Column(db.String(100),nullable=True)
+    stroke = db.Column(db.Integer,nullable=True)
+    date = db.Column(db.String(100),nullable=True)
+    user_id = db.Column(db.ForeignKey('user.id'))
+
+
 db.create_all()

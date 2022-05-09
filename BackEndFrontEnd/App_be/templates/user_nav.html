@@ -4,5 +4,12 @@
       <p>{{user.username}}</p>
       <p>{{user.name}}</p>
       <a href="{{url_for('home_actions.output')}}" class="btn btn-primary">View Latest Prediction</a>
+      <br>
+      <br>
+      {% if request.path != url_for('home_actions.Pridiction_History')  %}
+      <a href="{{url_for('home_actions.Pridiction_History')}}" class="btn btn-primary">View Prediction History</a>
+      
+
+      {% endif %}
     </div>
 </div>

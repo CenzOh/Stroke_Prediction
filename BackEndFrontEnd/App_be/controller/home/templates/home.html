@@ -7,12 +7,67 @@
     <div class="col-12 col-md-auto bg-light border p-0 rounded-lg">
       {%include 'user_nav.html'%}
     </div>
+
+
+    <div class="d-flex justify-content-center ">
+      <form style="padding:20px" action="{{ url_for('home_actions.index') }}" method="post">
+      <h3 style="font-weight:bold">Find BMI</h3>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="number" class="form-control" step="any" required  name="weight" required  placeholder="Weight in Pounds">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="number" class="form-control" step="any" required  name="feet" required  placeholder="Feets">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="number" class="form-control" step="any" required  name="inches" required  placeholder="inches">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class=" col-sm-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <p style="margin-left:20px;margin-top:20px"> BMI Categories:</p>
+        
+          <p style="margin-left:20px;margin-top:20px"> Underweight = 18.5</p>
+         
+          <p style="margin-left:20px;margin-top:20px"> Normal weight = 18.5–24.9</p>
+         
+          <p style="margin-left:20px;margin-top:20px">Overweight = 25–29.9</p>
+          
+          <p style="margin-left:20px;margin-top:20px"> Obesity = BMI of 30 or greater</p>
+          
+          <p style="margin-left:20px;margin-top:20px"> Your BMI Is : <b style="color:green">{{ bmi }}</b> </p>
+
+        </div>
+      </form>
+    </div>
+
     <div class="col border rounded-lg shadow-lg bg-white">
       <div class="py-3 font-weight-bold mb-3 border-bottom">Dashboard ~ Welcome to your dashboard, please enter all information truthfully and to the best of your knowledge in order to recieve an accurate prediction!</div>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for  message in messages %}
+          <div class="alert alert-primary alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
       <form class="mt-5 row no-gutters" action="{{url_for('home_actions.perform')}}" method="POST">
         {%for inp in inputs%}
         <div class="col-12 col-md-6 col-lg-4 p-2">
-          <label for="{{inp['name']}}" class="font-weight-bold">{{inp['text']}}</label>
+          <label for="{{inp['name']}}" class="font-weight-bold" style="font-size:13px">{{inp['text']}}</label>
           {%if inp['type']=='number'%}
             {% if inp['name'] == 'age' %}
               <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" required/>
@@ -20,7 +75,7 @@
               <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" step="0.01" required/>
             {% elif inp['name'] == 'avg_glucose_level'%}
               <input id="{{inp['name']}}" name="{{inp['name']}}" type="{{inp['type']}}" class="form-control" min="55.1" max="272" step="0.01" required/>
-            {%endif%}
+            {%endif%}          
           {%else%}
             <select id="{{inp['name']}}" name="{{inp['name']}}" class="form-control" required>
               {%for x in inp['values']%}
@@ -30,9 +85,6 @@
           {%endif%}
         </div>
         {%endfor%}
-        <div class="calc">
-          <iframe scrolling="no" height="395" frameborder="0" width="170" src="https://www.cdc.gov/healthyweight/assessing/adult-widget/iframe.html" title="Adult BMI (Body Mass Index) Calculator" style="overflow: hidden;"></iframe>
-        </div>
         <div class="col-12 mt-3">
           <div class="text-right">
             <input class="btn btn-danger" type="reset" value="Clear"/>
