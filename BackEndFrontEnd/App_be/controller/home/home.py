@@ -12,7 +12,7 @@ inputs = [
     {'name':'ever_married', 'text': 'Are you married?', 'type': 'select', 'values': [ 'No', 'Yes' ]},
     {'name':'heart_disease', 'text': 'Heart Disease', 'type': 'select', 'values': [ 'No', 'Yes' ]},
     {'name':'work_type', 'text': 'Work Type', 'type': 'select', 'values': [ 'Government Job', 'Never Worked', 'Private', 'Self Employeed', 'Children' ]},
-    {'name':'Residence_type', 'text': 'Residence Type', 'type': 'select', 'values': [ 'Rular', 'Urban' ]},
+    {'name':'Residence_type', 'text': 'Residence Type', 'type': 'select', 'values': [ 'Rural', 'Urban' ]},
     {'name':'avg_glucose_level', 'text': 'Average Glucose Level (55.1 - 272)', 'type': 'number'},
     {'name':'bmi', 'text': 'BMI', 'type': 'number'},
     {'name':'smoking_status', 'text': 'Smoking Status', 'type': 'select', 'values': [ 'Unknown', 'Formely smoked', 'Never smoked', 'Smokes' ]},

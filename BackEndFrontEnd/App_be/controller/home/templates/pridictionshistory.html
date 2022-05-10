@@ -9,7 +9,7 @@
     border-radius: 4px;
     color: #fff;
     text-transform: uppercase;
-    font-size: 12px
+    font-size: 20px
 }
 
 .alert_info {
@@ -111,7 +111,7 @@ button.close {
     <div class="col border rounded-lg shadow-lg " style="background-color:#87ceeb">
         {% if pridictions|length<1 %}
 
-        <div class="alert fade_success .fade mt-4"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <strong style="color:red">Oops!</strong><h2 style="color:#87ceeb">You have not made any predictions for the system to store, please begin making predictions! 🚫</h2> </div>
+        <div class="alert fade_success .fade mt-4"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> <strong style="color:red">Oops!</strong><h2 style="color:#00a7e9">You have not made any predictions for the system to store, please begin making predictions! 🚫</h2> </div>
 
         {% endif %}
         <a href="{{url_for('home_actions.index')}}" class="btn btn-primary mt-3" style="width:100%;">
@@ -121,17 +121,17 @@ button.close {
                    
                 {% if p.stroke == 1 %}
           
-                  <div class="alert fade_warning .fade mt-4" >  <h3 style="color:#87ceeb"> You had a Stroke😔. At {{ p.date }}</h3> 
+                  <div class="alert fade_warning .fade mt-4" >  <h3 style="color:#00a7e9"> You had a Stroke😔. At {{ p.date }}</h3> 
                       <hr>
-                      <p style="color:black;font-weight:bold">Your Glocuse Level Was <b style="color:red">{{ p.avg_gluscose_level }}</b> . <b style="color:#87ceeb"> At {{ p.date}}</b></p>
-                      <p style="color:black;font-weight:bold">Your BMI Was <b style="color:red">{{ p.bmi }}</b>. <b style="color:#87ceeb">At {{ p.date}}</b></p>
+                      <p style="color:black;font-weight:bold">Your Glocuse Level Was <b style="color:red">{{ p.avg_gluscose_level }}</b> . <b style="color:#00a7e9"> At {{ p.date}}</b></p>
+                      <p style="color:black;font-weight:bold">Your BMI Was <b style="color:red">{{ p.bmi }}</b>. <b style="color:#00a7e9">At {{ p.date}}</b></p>
                   </div>
           
                 {% else %}
                   <div class="alert fade_success .fade mt-4 " >  <h3 style="color:green"> You had no Stroke😊. At {{ p.date }}</h3>
                   <hr>
-                  <p style="color:black;font-weight:bold;font-size:20px;">During this Prediction Your Average Glocuse Level Was : <b style="color:red">{{ p.avg_gluscose_level }}</b> . <b style="color:#87ceeb"> At {{ p.date}}</b></p>
-                  <p style="color:black;font-weight:bold;font-size:20px;">During this Prediction  Your BMI Was : <b style="color:red">{{ p.bmi }}</b> . <b style="color:#87ceeb">At {{ p.date}}</b> </p>
+                  <p style="color:black;font-weight:bold;font-size:20px;">During this Prediction Your Average Glocuse Level Was : <b style="color:red">{{ p.avg_gluscose_level }}</b> . <b style="color:#00a7e9"> At {{ p.date}}</b></p>
+                  <p style="color:black;font-weight:bold;font-size:20px;">During this Prediction  Your BMI Was : <b style="color:red">{{ p.bmi }}</b> . <b style="color:#00a7e9">At {{ p.date}}</b> </p>
           
                   </div>
                  {% endif %}
