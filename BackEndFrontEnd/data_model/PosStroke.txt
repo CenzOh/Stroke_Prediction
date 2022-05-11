@@ -2,3 +2,4 @@ id,gender,age,hypertension,heart_disease,ever_married,work_type,Residence_type,a
 Male,80,0,1,Yes,Private,Rural,105.92,32.5,never smoked,1
 Female,69,0,0,No,Self,Urban,94.39,22.8,never smoked,1
 Female,61,0,1,Yes,Govt_job,Rural,120.46,36.8,smokes, 1
+Prof comments - Avoncy, 3 months avg for glucose level. Take avoncy number 24h 3 month, 5 to 15. 5 is avg. 6 diabetes, etc. radio button. what is your fasting sugar.
