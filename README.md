@@ -41,30 +41,37 @@ Capstone Project in Information Systems class assignment. Creating a Stroke Pred
 ## Screenshots
 Note: The arrows indicate clickable buttons
 
-Landing Page
+###Landing Page
 
 ![landing1](/Images/landing.PNG)
 ![landing2](/Images/landing2.PNG)
 ![landing3](/Images/landing3.PNG)
 
-Register Page
+###Register Page
+
 ![register](/Images/register.PNG)
 
-Login Page
+###Login Page
+
 ![login](/Images/login.PNG)
 
-Home Page
+###Home Page
+
 ![home](/Images/home.PNG)
 
-Predicted No Stroke
+###Predicted No Stroke
+
 ![mpstroke](/Images/nostroke.PNG)
 
-Predicted Stroke
+###Predicted Stroke
+
 ![stroke](/Images/stroke.PNG)
 ![stroke2](/Images/stroke2.PNG)
 
-History of Predictions
+###History of Predictions
+
 ![history](/Images/history.PNG)
 
-Settings Page
+###Settings Page
+
 ![settings](/Images/settings.PNG)
