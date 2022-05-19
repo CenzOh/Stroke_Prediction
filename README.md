@@ -1,4 +1,4 @@
-# Stroke_Prediction
+# Stroke Prediction
 Capstone Project in Information Systems class assignment. Creating a Stroke Prediction web application utilizing Python for machine learning, HTML for the web implementation, and SQLAlchemy for the user database. Documentation also included.
 
 ## User Stories
@@ -16,3 +16,24 @@ Capstone Project in Information Systems class assignment. Creating a Stroke Pred
 - [x] User should have access to a list of previous predictions.
 - [x] User is able to delete their account.
 - [x] Add files compatible with Mac OS.
+
+## Tech Stacks
+### Front-End
+- HTML
+
+### Back-End
+- SQLAlchemy
+- Python
+
+### Libraries
+- Flask
+- Httplib2
+- Joblip2
+- Numpy
+- Pandas
+- Requests
+- Scikit_learn
+- Flask-SQLAlchemy
+
+### Machine Learning Algorithm
+- Random Forest Classification
