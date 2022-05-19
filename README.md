@@ -37,3 +37,8 @@ Capstone Project in Information Systems class assignment. Creating a Stroke Pred
 
 ### Machine Learning Algorithm
 - Random Forest Classification
+
+## Screenshots
+Note: The arrows indicate clickable buttons
+
+![landing](/Images/Images/landing.PNG)
